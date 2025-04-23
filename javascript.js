@@ -11,7 +11,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice () {
-    const humanChoice = prompt("Let's play. Type rock, paper, or scissors.");
+    const humanChoice = prompt("Let's play. Type rock, paper, or scissors.") .toLowerCase();
     
     if (humanChoice === "rock") {
         return "rock"
@@ -32,18 +32,16 @@ function playRound(computerChoice, humanChoice) {
         (computerChoice === "scissors" && humanChoice ==="rock")
     ) {
         humanScore++;
-        return "You win";
+        return "You win! " + humanChoice + " beats " + computerChoice + "!"
     }   else if (computerChoice === humanChoice) {
-        return "It's a tie"
+        return "It's a tie, you both played " + humanChoice
     }   else {
         computerScore++;
-        return "You lose"
+        return "You lose! " + computerChoice + " beats " + humanChoice + "!"
     }
 }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-console.log(humanSelection);
-console.log(computerSelection);
-console.log(playRound(humanSelection, computerSelection));
+playRound(humanSelection, computerSelection);
