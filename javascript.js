@@ -40,4 +40,10 @@ function playRound(computerChoice, humanChoice) {
         return "You lose"
     }
 }
-console.log(playRound("rock", "scissors"));
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log(humanSelection);
+console.log(computerSelection);
+console.log(playRound(humanSelection, computerSelection));
