@@ -22,6 +22,7 @@ function getHumanChoice () {
     }
 }
 
+
 let computerScore = 0;
 let humanScore = 0;
 
@@ -41,7 +42,14 @@ function playRound(computerChoice, humanChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        console.log(playRound(computerSelection, humanSelection));
+    }
 
-playRound(humanSelection, computerSelection);
+    console.log(`Final Score - You: ${humanScore}, Computer: ${computerScore}`);
+}
+
+playGame(); // Start the game
