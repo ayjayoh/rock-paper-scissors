@@ -1,3 +1,4 @@
+// Function to get the computer's random choice
 function getComputerChoice() {
     const computerChoice = Math.random();
 
@@ -10,6 +11,7 @@ function getComputerChoice() {
     }
 }
 
+// Function to get the human player's choice
 function getHumanChoice () {
     const humanChoice = prompt("Let's play. Type rock, paper, or scissors.") .toLowerCase();
     
@@ -22,10 +24,11 @@ function getHumanChoice () {
     }
 }
 
-
+// Initialize human scores
 let computerScore = 0;
 let humanScore = 0;
 
+// Function to play a single round
 function playRound(computerChoice, humanChoice) {
     if (
         (computerChoice === "rock" && humanChoice ==="paper") ||
@@ -42,13 +45,14 @@ function playRound(computerChoice, humanChoice) {
     }
 }
 
+// Function to play 5 rounds
 function playGame() {
     for (let i = 0; i < 5; i++) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
         console.log(playRound(computerSelection, humanSelection));
     }
-
+    // Show final score after 5 rounds
     console.log(`Final Score - You: ${humanScore}, Computer: ${computerScore}`);
 }
 
